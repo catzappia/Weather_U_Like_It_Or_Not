@@ -38,7 +38,7 @@ class WeatherService {
   }
   // TODO: Create fetchLocationData method
   private async fetchLocationData(query: string) { // <- starter code
-    const repsonse = await fetch(query);
+    const response = await fetch(query);
     return await response.json();
   }
   // TODO: Create destructureLocationData method
@@ -72,12 +72,12 @@ class WeatherService {
   private parseCurrentWeather(response: any) { // <- starter code
     const city = response.name;
     const temperature = response.main.temp;
-    const desccription = response.weather[0].description;
+    const description = response.weather[0].description;
     const icon = response.weather[0].icon;
     return new Weather(city, temperature, description, icon);
   }
   // TODO: Complete buildForecastArray method
-  private buildForecastArray(currentWeather: Weather, weatherData: any[]) { // <- starter code
+  private buildForecastArray(_currentWeather: Weather, weatherData: any[]) { // <- starter code
     const forecastArray = weatherData.map((weather: any) => {
       const date = new Date(weather.dt * 1000);
       const temperature = weather.main.temp;

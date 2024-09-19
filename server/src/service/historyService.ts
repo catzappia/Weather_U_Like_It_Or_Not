@@ -1,7 +1,4 @@
 
-// start SERVICE_v01.03 code
-import { promise as fs } from 'fs';
-
 // start SERVICE_v03.01 code
 import { promises as fs } from 'fs';
 
@@ -10,10 +7,6 @@ async function readTextFile(filePath: string): Promise<string> {
   return await fs.readFile(filePath, 'utf-8');
 }
 
-
-async function writeTextFile(filePath: string, datat: string): Promise<void> {
-  await fs.writeFile(filePath, data, 'utf-8');
-}
 // end SERVICE_v01.03 code
 
 // start SERVICE_v01.01 code
@@ -34,17 +27,6 @@ class City {
 }
 // end SERVICE_v01.01
 
-// start SERVICE_v01.02 code
-// TODO: Complete the HistoryService class
-class HistoryService {
-  async delete(id: string) {
-    await this.removeCity(city.name);
-
-    this. id = id;
-  }
-}
-// end SERVICE_v03.01 code
-
 // start SERVICE_v03.02 code
 // TODO: Complete the HistoryService class
 class HistoryService {
@@ -61,17 +43,10 @@ class HistoryService {
   }
   // TODO: Define a write method that writes the updated cities array to the searchHistory.json file
   private async write(cities: City[]) { // <- starter code
-
     await writeTextFile('./searchHistory.json', JSON.stringify(cities));
   }
   // TODO: Define a getCities method that reads the cities from the searchHistory.json file and returns them as an array of City objects
-  async getCities() { // <- starter code 
-
-    await writetextFile('./searchHistory.json', JSON.strigify(cities));
-  }
-  // TODO: Define a getCities method that reads the cities from the searchHistory.json file and returns them as an array of City objects
   async getCities() { // <- starter code
-
     const cities = await this.read();
     return cities;
   }
