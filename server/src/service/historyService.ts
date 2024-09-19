@@ -1,4 +1,23 @@
+// start SERVICE_v03.01 code
+import { promises as fs } from 'fs';
+
+async function readTextFile(filePath: string): Promise<string> {
+  return await fs.readFile(filePath, 'utf-8');
+}
+async function writeTextFile(filePath: string, data: string): Promise<void> {
+  await fs.writeFile(filePath, data, 'utf-8');
+}
 // TODO: Define a City class with name and id properties
+class City {
+  name: string;
+  id: string;
+  constructor(name: string, id: string) {
+    this.name = name;
+    this. id = id;
+  }
+}
+// end SERVICE_v03.01 code
+
 
 // TODO: Complete the HistoryService class
 class HistoryService {
