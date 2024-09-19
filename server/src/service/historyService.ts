@@ -1,3 +1,15 @@
+// start SERVICE_v01.03 code
+import { promise as fs } from 'fs';
+
+async function readTextFile(filePath: string): Promise<string> {
+  return await fs.readFile(filePath, 'utf-8');
+}
+
+async function writeTextFile(filePath: string, datat: string): Promise<void> {
+  await fs.writeFile(filePath, data, 'utf-8');
+}
+// end SERVICE_v01.03 code
+
 // start SERVICE_v01.01 code
 // TODO: Define a City class with name and id properties
 class City {
