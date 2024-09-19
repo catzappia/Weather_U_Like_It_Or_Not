@@ -19,10 +19,24 @@ router.post('/', (req, res) => {
 });
 // end v01.01
 
+// start code for v01.02
 // TODO: GET search history
-router.get('/history', async (req, res) => {});
+router.get('/history', async (_req, res) => {
+  const cities = await HistoryService.getCities();
+  res.json(cities);
+});
 
 // * BONUS TODO: DELETE city from search history
-router.delete('/history/:id', async (req, res) => {});
+router.delete('/history/:id', async (req, res) => {
+  const id = req.params.id;
+  if (!id) {
+    res.status(400).json({ message: 'ID is required' }):
+    return;
+}
+  
+  HistoryService.delete(id)
+  
+}):
+// end v01.02
 
 export default router;
