@@ -14,7 +14,7 @@
 - [Tests](#tests)
 
 ## Usage
-![Screenshot](Develop/assets/screenshot)
+![Screenshot](weather-site.png)
 
 ## Credits
 
